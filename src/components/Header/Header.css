@@ -1,0 +1,38 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 70px;
+    max-width: 1200px;
+    margin-top: 20px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.input_search {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input_search input {
+    width: 100%;
+    max-width: 400px;
+    min-width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.button_login_signin {
+    display: flex;
+    gap: 12px;
+}

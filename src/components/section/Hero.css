@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  .hero {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .live_end {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .live_end button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .live_end button:hover {
+    background-color: #0056b3;
+  }
+  
+  .sportsName {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .sportsName span {
+    padding: 8px 15px;
+    background-color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+  }
+  
+  .sportsName span:hover {
+    background-color: #ddd;
+  }
+  
+  .line {
+    width: 80%;
+    height: 2px;
+    background: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  .placar {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  .width_container{
+    width: 1200px;
+  }
+  .container_card {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+  
+  p {
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+  }
+  

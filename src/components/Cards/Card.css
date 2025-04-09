@@ -1,0 +1,126 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 233.5px;
+  height: 95px;
+  border-radius: 5px;
+  gap: 2px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  padding-bottom: 6px;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card.football {
+  background: linear-gradient(to bottom, #dfdfdf 0%, #02ff0b 100%);
+  color: #333333 !important;
+}
+
+.card.volleyball {
+  background: linear-gradient(to bottom, #fafafb 0%, #f8ab04 34%, #223567 51%);
+  color: white;
+}
+.card.handball {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #93c5fd 30%,
+    #3b82f6 60%,
+    #1e3a8a 100%
+
+  );
+  color: #333333;
+}
+.card.hockey{
+  background: linear-gradient(135deg, #1e3c72, #2a5298, #b4c6e7);
+  
+  
+}
+.card.hockey p{
+  color: white;
+}
+.card.basketball {
+  background: linear-gradient(
+    to bottom,
+    #ce691f 59%,
+    #9b4f17 89%,
+    #683510 100%
+  );
+  color: white;
+}
+.card.baseball {
+  background: linear-gradient(to bottom, #dfdfdf 0%, #2f2f2f 100%);
+  color: white;
+}
+
+.team-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  font-size: 12px;
+}
+
+.teamName {
+  font-weight: bold;
+  color: #f8f8f8;
+  text-align: center;
+  padding: 4px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 95px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.teamGol {
+  font-size: 11px;
+  font-weight: bold;
+  width: 25px;
+  text-align: center;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.info-header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  position: absolute;
+  top: 0;
+}
+
+.status {
+  background-color: red;
+  font-size: 8px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+}
+
+.timestamp {
+  font-size: 0.55rem;
+ color: blue;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ text-align: center;
+}

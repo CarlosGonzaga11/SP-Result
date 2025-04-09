@@ -1,0 +1,22 @@
+button{
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    color: white;
+}
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #007bff;;
+    border-radius: 8px;
+    width: 100px;
+    height: 40px;
+    padding: 8px;  
+    transition: 0.4s ease;
+}
+.button:hover{
+    background-color: white;
+    border: 2px solid #0172eb;;
+
+}
