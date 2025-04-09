@@ -13,7 +13,7 @@ import HandballImage from "../../img/handball.png";
 import Baseball from "../../img/beiseball.png";
 import Loader from "../loader/Loader";
 function Hero() {
-  const [selectedSport, setSelectedSport] = useState('volleyball');
+  const [selectedSport, setSelectedSport] = useState("volleyball");
   const [matches, setMatches] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [dadosModal, setDadosModal] = useState(null);
@@ -24,7 +24,7 @@ function Hero() {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     async function fetchMatches() {
-      const apiKeySport= process.env.REACT_APP_API_KEY_SPORTS;
+      const apiKeySport = process.env.REACT_APP_API_KEY_SPORTS;
       if (!selectedSport) return;
       try {
         setLoading(true);
@@ -39,17 +39,14 @@ function Hero() {
           },
         });
         const data = await response.json();
-        console.log("data> ta vindo algo?", data);
+
         setMatches(data.response);
-        setFilter('');
-        console.log('data',matches);
+        setFilter("");
+
         setTimeout(() => {
           setLoading(false);
         }, 1500);
-      } catch (error) {
-        console.error("Erro ao buscar partidas:", error);
-      }
-      console.log("match", matches);
+      } catch (error) {}
     }
 
     fetchMatches();
@@ -75,52 +72,55 @@ function Hero() {
         )}&type=video&maxResults=${maxResults}&key=${apiKey}`
       );
       const data = await response.json();
-    
 
       if (data.items && data.items.length > 0) {
         setVideoData(data.items);
       } else {
-       
         setVideoData([]);
       }
     } catch (error) {
       setVideoData([]);
     }
-  
   }
 
-function getStatus(game){
-  return selectedSport === 'football' ? game.fixture?.status?.long : game.status?.long;
-};
+  function getStatus(game) {
+    return selectedSport === "football"
+      ? game.fixture?.status?.long
+      : game.status?.long;
+  }
 
-const filteredGames = matches.filter((game) => {
-  const status = getStatus(game);
+  const filteredGames = matches.filter((game) => {
+    const status = getStatus(game);
 
-  if (filter === "Not Started") return status === "Not Started";
-  if (filter === "Finished") return status === "Finished";
-  if (filter === "Premier League") return game.league?.name === "Premier League";
-  if (filter === "Second Half") return status === "Second Half";
-  if (filter === "live")
-    return status !== "Not Started" && status !== "Finished" && status !== "Game Finished";
+    if (filter === "Not Started") return status === "Not Started";
+    if (filter === "Finished") return status === "Finished";
+    if (filter === "Premier League")
+      return game.league?.name === "Premier League";
+    if (filter === "Second Half") return status === "Second Half";
+    if (filter === "live")
+      return (
+        status !== "Not Started" &&
+        status !== "Finished" &&
+        status !== "Game Finished"
+      );
 
-  return true;
-
-});
+    return true;
+  });
 
   const dataFormatada = pegarDataAtual();
-  async function openModal(match){
+  async function openModal(match) {
     setDadosModal(match);
     await fetchYouTubeVideos(
       `${match.teams.home.name} vs ${match.teams.away.name}  highlights`
     );
-    setIsOpen(true); 
-  };
+    setIsOpen(true);
+  }
 
-  function closeModal(){
+  function closeModal() {
     setIsOpen(false);
 
     setVideoData([]);
-  };
+  }
 
   const sports = [
     "Football",
@@ -143,7 +143,6 @@ const filteredGames = matches.filter((game) => {
   function ShippingName(e) {
     const ship = e.target.value;
     setFilterInput(ship);
-    console.log("filterInput", ship);
     const filtredArray = matches.filter(
       (match) =>
         match.teams.away.name.toLowerCase().includes(ship) ||
@@ -154,7 +153,6 @@ const filteredGames = matches.filter((game) => {
   }
 
   useEffect(() => {
-    console.log(showFilter);
   }, [filterInput]);
 
   function SelectedSport(sport) {
@@ -162,7 +160,7 @@ const filteredGames = matches.filter((game) => {
     setShowFilter("");
     setFilterInput("");
   }
-  
+
   return (
     <div className="width_container">
       <Header filterInput={filterInput} ShippingName={ShippingName} />
@@ -188,7 +186,6 @@ const filteredGames = matches.filter((game) => {
         ) : (
           <div className="placar">
             <div>
-            
               {showFilter.length > 0 ? (
                 <div className="container_card">
                   {showFilter.map((match) => {
