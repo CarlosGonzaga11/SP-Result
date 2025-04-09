@@ -42,10 +42,9 @@ function Hero() {
 
         setMatches(data.response);
         setFilter("");
-
         setTimeout(() => {
           setLoading(false);
-        }, 1500);
+        }, 8000);
       } catch (error) {}
     }
 
@@ -174,15 +173,15 @@ function Hero() {
           />
         </div>
         <div className="sportsName">
-          {sports.map((sport) => (
-            <span key={sport} onClick={() => SelectedSport(sport)}>
+          {sports.map((sport,index) => (
+            <span key={index} onClick={() => SelectedSport(sport)}>
               {sport.toLowerCase()}
             </span>
           ))}
         </div>
         <div className="line"></div>
-        {loading ? (
-          <Loader />
+        <div className="container-w-loader">        {loading ? ( 
+         <div className="krl">  <Loader /></div>
         ) : (
           <div className="placar">
             <div>
@@ -301,6 +300,8 @@ function Hero() {
           </div>
         )}
       </div>
+      </div>
+
     </div>
   );
 }

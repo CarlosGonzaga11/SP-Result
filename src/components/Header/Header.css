@@ -35,4 +35,19 @@
 .button_login_signin {
     display: flex;
     gap: 12px;
+
 }
+
+@media (max-width: 600px) {
+    .button_login_signin {
+      display: none;
+    }
+    .input_search{
+        width: 40%;
+        padding-left: 20px;
+    }
+    .logo{
+        display: none;
+    }
+
+  }
